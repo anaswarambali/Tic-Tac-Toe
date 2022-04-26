@@ -11,6 +11,8 @@ def reset():
         i['text']=' '
     c=0
     xo=over=True
+    for i in w:
+        i.config(bg="silver")
     
 def win(s,d):
     global w
@@ -18,11 +20,14 @@ def win(s,d):
     for i in x:
         a,b,c=i
         if w[a]["text"]==w[b]["text"]==w[c]["text"]==s:
+            w[a].config(bg="green"),w[b].config(bg="green"),w[c].config(bg="green")
             messagebox.showinfo("Game over",s+" won the match")
             return False
             
     else:
         if d==9:
+            for i in w:
+                i.config(bg="red")
             messagebox.showinfo("Tie","Match tie")
             return False
     return True
@@ -67,29 +72,29 @@ root.title("Tic Tac")
 
 
 #First Row
-b1=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b1))
+b1=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b1))
 b1.grid(row=0,column=0)
-b2=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b2))
+b2=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b2))
 b2.grid(row=0,column=1)
-b3=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b3))
+b3=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b3))
 b3.grid(row=0,column=2)
 
 #Second Row
 
-b4=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b4))
+b4=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b4))
 b4.grid(row=1,column=0)
-b5=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b5))
+b5=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b5))
 b5.grid(row=1,column=1)
-b6=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b6))
+b6=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b6))
 b6.grid(row=1,column=2)
 
 #third Row
 
-b7=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b7))
+b7=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b7))
 b7.grid(row=2,column=0)
-b8=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b8))
+b8=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b8))
 b8.grid(row=2,column=1)
-b9=Button(root,text=' ',font=("Arial",20,"bold"),height=2,width=4,command=lambda: click(b9))
+b9=Button(root,text=' ',font=("Arial",20,"bold"),height=3,width=6,command=lambda: click(b9))
 b9.grid(row=2,column=2)
 
 root.mainloop()
